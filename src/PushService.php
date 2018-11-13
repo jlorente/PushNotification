@@ -1,4 +1,5 @@
 <?php
+
 namespace Edujugon\PushNotification;
 
 use Edujugon\PushNotification\Exceptions\PushNotificationException;
@@ -64,7 +65,7 @@ abstract class PushService
     public function initializeConfig($service)
     {
         if (($conf = config('pushnotification'))) {
-            $configuration =  $conf;
+            $configuration = $conf;
         } elseif (function_exists('config_path') && file_exists(config_path('pushnotification.php'))) {
             $configuration = include(config_path('pushnotification.php'));
         } else {
